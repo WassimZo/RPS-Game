@@ -1,11 +1,12 @@
 import logo from "./assets/logo-bonus.svg";
 import Score from "./components/Score";
 import GameContainer from "./components/GameContainer";
+import RulesButton from "./components/RulesButton";
 
 function App() {
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-b from-slate-700 to-slate-900 pt-10">
+      <div className="min-h-screen w-full bg-blue-950 pt-10 flex flex-col items-center">
         <div className="w-[80vw] border-4 border-gray-500 flex justify-between px-4 mx-auto py-2 rounded-lg">
           <img
             src={logo}
@@ -15,7 +16,7 @@ function App() {
           <Score />
         </div>
         <GameContainer />
-        {/* Rules button */}
+        <RulesButton />
       </div>
     </>
   );
