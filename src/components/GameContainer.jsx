@@ -11,7 +11,11 @@ import getWinner from "../utils/getWinner";
 import { useEffect } from "react";
 
 export default function GameContainer() {
-  const game = useSelector((state) => state.game);
+  const in_game = useSelector((state) => state.in_game);
+  const userPick = useSelector((state) => state.userPick);
+  const housePick = useSelector((state) => state.housePick);
+  const user_winner = useSelector((state) => state.user_winner);
+  const house_winner = useSelector((state) => state.house_winner);
   const dispatch = useDispatch();
 
   function getItem(item, picker) {
@@ -21,8 +25,8 @@ export default function GameContainer() {
           <Lizard
             picked={true}
             winner={
-              (picker === "user" && game.user_winner) ||
-              (picker === "house" && game.house_winner)
+              (picker === "user" && user_winner) ||
+              (picker === "house" && house_winner)
             }
           />
         );
@@ -31,8 +35,8 @@ export default function GameContainer() {
           <Paper
             picked={true}
             winner={
-              (picker === "user" && game.user_winner) ||
-              (picker === "house" && game.house_winner)
+              (picker === "user" && user_winner) ||
+              (picker === "house" && house_winner)
             }
           />
         );
@@ -41,8 +45,8 @@ export default function GameContainer() {
           <Rock
             picked={true}
             winner={
-              (picker === "user" && game.user_winner) ||
-              (picker === "house" && game.house_winner)
+              (picker === "user" && user_winner) ||
+              (picker === "house" && house_winner)
             }
           />
         );
@@ -51,8 +55,8 @@ export default function GameContainer() {
           <Scissors
             picked={true}
             winner={
-              (picker === "user" && game.user_winner) ||
-              (picker === "house" && game.house_winner)
+              (picker === "user" && user_winner) ||
+              (picker === "house" && house_winner)
             }
           />
         );
@@ -61,14 +65,14 @@ export default function GameContainer() {
           <Spock
             picked={true}
             winner={
-              (picker === "user" && game.user_winner) ||
-              (picker === "house" && game.house_winner)
+              (picker === "user" && user_winner) ||
+              (picker === "house" && house_winner)
             }
           />
         );
       default:
         return (
-          <div className="p-6 border-[16px] border-transparent bg-black/25 rounded-full">
+          <div className="p-6 border-[16px] border-transparent bg-black/25 rounded-full xl:p-12 xl:border-[24px] 2xl:p-16 2xl:border-[36px]">
             <img
               src={defaultIcon}
               alt=""
@@ -80,49 +84,49 @@ export default function GameContainer() {
   }
 
   useEffect(() => {
-    if (!game.housePick && game.in_game) {
+    if (!housePick && in_game) {
       const timer = setTimeout(() => {
         dispatch(pick_house(housePickRandom()));
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [game.in_game]);
+  }, [in_game]);
 
   useEffect(() => {
-    if (game.housePick && game.in_game) {
-      const winner = getWinner(game.userPick, game.housePick);
+    if (housePick && in_game) {
+      const winner = getWinner(userPick, housePick);
       if (winner === "user") {
         dispatch(win());
       } else if (winner === "house") {
         dispatch(loose());
       }
     }
-  }, [game]);
+  }, [housePick]);
 
   return (
     <>
-      {game.userPick ? (
+      {userPick ? (
         <>
           <div className="mt-10 px-8 w-full flex justify-between  md:w-[60vw]">
             <div className="flex flex-col items-center py-2 text-slate-100 tracking-widest">
-              {getItem(game.userPick, "user")}
+              {getItem(userPick, "user")}
               <span className="mt-3 lg:order-first lg:text-4xl lg:mb-20">
                 YOU PICKED
               </span>
             </div>
             <div className="flex flex-col items-center py-2 text-slate-100 tracking-widest">
-              {getItem(game.housePick, "house")}
+              {getItem(housePick, "house")}
               <span className="mt-3 lg:order-first lg:text-4xl lg:mb-20">
                 THE HOUSE PICKED
               </span>
             </div>
           </div>
-          {game.userPick && game.housePick && (
+          {userPick && housePick && (
             <div className="mt-14 flex flex-col items-center 2xl:absolute 2xl:top-[50%]">
               <h1 className="text-slate-100 text-6xl">
-                {!game.user_winner && !game.house_winner
+                {!user_winner && !house_winner
                   ? "DRAW"
-                  : game.user_winner
+                  : user_winner
                   ? "YOU WIN"
                   : "YOU LOOSE"}
               </h1>

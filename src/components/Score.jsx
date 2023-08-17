@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 export default function Score() {
-  const game = useSelector((state) => state.game);
+  const score = useSelector((state) => state.score);
 
   return (
     <div className="bg-slate-100 flex flex-col items-center px-6 py-2 rounded-lg lg:justify-center lg:py-2 lg:px-14">
@@ -9,7 +9,7 @@ export default function Score() {
         SCORE
       </span>
       <span className="text-5xl text-gray-700 font-bold lg:text-8xl">
-        {game.score}
+        {score}
       </span>
     </div>
   );
