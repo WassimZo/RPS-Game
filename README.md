@@ -1,6 +1,6 @@
-# Frontend Mentor - IP address tracker solution
+# Frontend Mentor - Rock, Paper, Scissors solution
 
-This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -16,7 +16,6 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -24,15 +23,14 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 Users should be able to:
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See their own IP address on the map on the initial page load
-- Search for any IP addresses or domains and see the key information and location
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors, Lizard, Spock against the computer
+- Maintain the state of the score after refreshing the browser
 
 ### Screenshot
 
-![RPS-Game-on-large-screen](https://github.com/WassimZo/RPS-Game/blob/master/public/images/LargeScreen.png)
-![RPS-Game-on-mobile](https://github.com/WassimZo/RPS-Game/blob/master/public/images/MobileScreen.png)
+![RPS-Game-on-large-screen](https://github.com/WassimZo/RPS-Game/blob/master/public/LargeScreen.png?raw=true)
+![RPS-Game-on-mobile](https://github.com/WassimZo/RPS-Game/blob/master/public/MobileScreen.png?raw=true)
 
 ### Links
 
