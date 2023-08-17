@@ -103,18 +103,22 @@ export default function GameContainer() {
     <>
       {game.userPick ? (
         <>
-          <div className="mt-10 px-8 w-full flex justify-between">
+          <div className="mt-10 px-8 w-full flex justify-between  md:w-[60vw]">
             <div className="flex flex-col items-center py-2 text-slate-100 tracking-widest">
               {getItem(game.userPick, "user")}
-              <span className="mt-3">YOU PICKED</span>
+              <span className="mt-3 lg:order-first lg:text-4xl lg:mb-20">
+                YOU PICKED
+              </span>
             </div>
             <div className="flex flex-col items-center py-2 text-slate-100 tracking-widest">
               {getItem(game.housePick, "house")}
-              <span className="mt-3">THE HOUSE PICKED</span>
+              <span className="mt-3 lg:order-first lg:text-4xl lg:mb-20">
+                THE HOUSE PICKED
+              </span>
             </div>
           </div>
           {game.userPick && game.housePick && (
-            <div className="mt-14 flex flex-col  items-center">
+            <div className="mt-14 flex flex-col items-center 2xl:absolute 2xl:top-[50%]">
               <h1 className="text-slate-100 text-6xl">
                 {!game.user_winner && !game.house_winner
                   ? "DRAW"
@@ -132,7 +136,7 @@ export default function GameContainer() {
           )}
         </>
       ) : (
-        <div className="mt-20 bg-[url('/images/bg-pentagon.svg')] bg-no-repeat bg-contain w-[250px] h-[300px] relative">
+        <div className="mt-20 bg-[url('/images/bg-pentagon.svg')] bg-no-repeat bg-contain w-[250px] h-[300px] relative lg:w-[500px] lg:h-[600px]">
           <div>
             <Scissors picked={false} />
             <Lizard picked={false} />

@@ -19,7 +19,6 @@ export const game = createSlice({
     },
     pick_house: (state, action) => {
       state.housePick = action.payload;
-      console.log('done');
     },
     reset: (state, action) => {
       state.userPick = undefined;

@@ -8,7 +8,7 @@ export default function RulesButton() {
   return (
     <>
       <button
-        className="border border-slate-50 text-lg tracking-widest bg-transparent text-slate-50 px-10 py-1 mt-auto mb-8 rounded-lg hover:bg-slate-300"
+        className="border border-slate-50 text-lg tracking-widest bg-transparent text-slate-50 px-10 py-1 mt-auto mb-8 rounded-lg hover:bg-slate-700 lg:absolute lg:bottom-4 lg:right-8"
         onClick={() => setShowModal(!showModal)}
       >
         RULES
